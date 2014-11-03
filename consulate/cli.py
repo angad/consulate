@@ -101,7 +101,7 @@ def main():
             del session.kv[args.key]
 
         elif args.action == 'get':
-            sys.stdout.write("%s\n" % session.kv.get(args.key))
+            sys.stdout.write("%s\n" % json.dumps(session.kv.get(args.key)))
 
         elif args.action == 'set':
             session.kv[args.key] = args.value
